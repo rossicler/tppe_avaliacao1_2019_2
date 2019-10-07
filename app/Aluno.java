@@ -11,6 +11,17 @@ public class Aluno {
 	private String celular;
 
 	public Aluno(String nome, String prefixoMatricula, String sufixoMatricula, String email, String celular) throws DadosAlunoIncompletoException {
+		checaDadosObrigatorios(nome, prefixoMatricula, sufixoMatricula);
+		
+		this.nome = nome;
+		this.prefixoMatricula = prefixoMatricula; 
+		this.sufixoMatricula = sufixoMatricula; 
+		this.email = email; 
+		this.celular = celular; 
+	}
+
+	private void checaDadosObrigatorios(String nome, String prefixoMatricula, String sufixoMatricula)
+			throws DadosAlunoIncompletoException {
 		if (nome == null || prefixoMatricula == null || sufixoMatricula == null ||
 			nome.equals("") || prefixoMatricula.equals("") || sufixoMatricula.equals("")) {
 			StringBuilder builder = new StringBuilder(); 
@@ -20,12 +31,6 @@ public class Aluno {
 			builder.append(sufixoMatricula== null ? "Sufixo Matricula: " + sufixoMatricula : null);
 			throw new DadosAlunoIncompletoException(builder.toString());
 		}
-		
-		this.nome = nome;
-		this.prefixoMatricula = prefixoMatricula; 
-		this.sufixoMatricula = sufixoMatricula; 
-		this.email = email; 
-		this.celular = celular; 
 	}
 
 	public static Aluno obterAluno(String nome, String prefixoMatricula, String sufixoMatricula, String email,
