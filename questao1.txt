@@ -1,0 +1,18 @@
+1)
+    a) Diferencie interfaces públicas de interfaces publicadas e justifique por que interfaces publicadas não devem ser refatoradas.
+    b) Qual a diferença entre os maus cheiros "Cirurgia com rifle" e "Mudanças divergentes". Responda informando claramente os princípios de projetos que estão sendo violados em cada um dos maus-cheiros.
+    c) Refatoração sempre leva a projetos mais eficientes em termo de desempenho. A afirmativa é verdadeira ou falsa? Justifique.
+    d) Como se tem a garantia de que uma refatoração teve sucesso?
+
+Respostas:
+1)
+    a) As interfaces públicas são aquelas que possuem acesso aos elementos que utilizam a interface, diferentemente das interfaces públicadas, gerando assim um problema, não é possivel
+       identificar os elementos que utilizam a interface, logo, se for refatorada, pode ser que esses elementos que utilizam a interface deixam de funcionar.
+    b) Ambos os maus cheiros tratam de quando uma alteração gera grandes mudanças em vários pontos, onde estas mudanças podem estar espalhadas em vários pontos, tornando-se difícil encontrá-las.
+       Deve-se então identificar essas mudanças e centralizá-las em um único local. A diferença é que a "Cirurgia de rifle" se refere a mudanças em diferentes classes, fazendo com que sejam
+       centralizadas em uma única classe. Já o mau cheiro "Mudanças divergentes" se refere a métodos, diferente da "Cirurgia de rifle" que se refere a classes. Em ambas, como foi dito, deve-se
+       identificar essas mudanças necessárias, e centralizá-las, pois essas mudanças se tornam difíceis de ser encontradas posteriormente.
+    c) Falsa. Nem sempre a refatoração leva a projetos mais eficientes em termo de desempenho, e sim em uma melhor qualidade de código.
+    d) Uma maneira bem simples e comum de ser usada para verificar o sucesso de uma refatoração é a execução de uma boa suite de testes. Com isso é possível afirmar que a refatoração não
+       alterou a funcionalidade do projeto.
+
